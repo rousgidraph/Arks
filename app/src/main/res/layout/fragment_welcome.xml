@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.login.fragments.welcome"
+    android:padding="10dp">
+
+
+    <TextView
+        android:id="@+id/lbl_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/welcome"
+        android:textSize="50sp"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lbl_signed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/let_s_get_you_signed_in"
+        app:layout_constraintStart_toStartOf="@+id/lbl_welcome"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_welcome" />
+
+    <EditText
+        android:id="@+id/edit_username"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="24dp"
+        android:ems="10"
+        android:layout_marginTop="18dp"
+        android:hint="@string/enter_username"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/lbl_username"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_username" />
+
+    <EditText
+        android:id="@+id/edit_pass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="18dp"
+        android:hint="secret password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/edit_username"
+        app:layout_constraintStart_toStartOf="@+id/lbl_pass"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_pass" />
+
+    <TextView
+        android:id="@+id/lbl_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="Username"
+        app:layout_constraintStart_toStartOf="@+id/lbl_signed"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_signed" />
+
+    <TextView
+        android:id="@+id/lbl_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="password"
+        android:layout_marginTop="36dp"
+        app:layout_constraintStart_toStartOf="@+id/edit_username"
+        app:layout_constraintTop_toBottomOf="@+id/edit_username" />
+
+    <Button
+        android:id="@+id/btn_exit"
+        android:layout_marginTop="36dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/exit"
+        app:layout_constraintStart_toStartOf="@+id/edit_pass"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_google_sign_in" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        app:layout_constraintEnd_toEndOf="@+id/edit_pass"
+        app:layout_constraintTop_toTopOf="@+id/btn_exit" />
+
+    <TextView
+        android:id="@+id/lbl_google_sign_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+
+        android:linksClickable="true"
+        android:text="@string/sign_in_with_google"
+        app:layout_constraintEnd_toEndOf="@+id/edit_pass"
+        app:layout_constraintStart_toStartOf="@+id/edit_pass"
+        app:layout_constraintTop_toBottomOf="@+id/edit_pass" />
+
+    <TextView
+        android:id="@+id/lbl_create_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Don't have account ? Create One."
+        app:layout_constraintEnd_toEndOf="@+id/btn_login"
+        app:layout_constraintStart_toStartOf="@+id/btn_exit"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

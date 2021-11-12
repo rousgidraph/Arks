@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Arks</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome">Welcome!</string>
+    <string name="enter_username">Enter username</string>
+    <string name="let_s_get_you_signed_in">Let\'s get you signed in.</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="exit">Exit</string>
+    <string name="login">login</string>
+    <string name="create_account">Create Account</string>
+    <string name="we_ll_get_you_sorted_in_no_time">We\'ll get you sorted in no time.</string>
+    <string name="merchant_details">Merchant Details</string>
+    <string name="phone_number">Phone number</string>
+    <string name="vet_details">Vet Details</string>
+    <string name="medicine_details">Medicine Details</string>
+    <string name="name">Name</string>
+    <string name="medicine_name">Medicine Name</string>
+    <string name="manufacturer">Manufacturer</string>
+    <string name="foot_and_mouth">Foot and mouth</string>
+    <string name="prescribed_for">Prescribed for</string>
+    <string name="_1_shot_per_week">1 Shot per week</string>
+    <string name="comment">Comment</string>
+    <string name="save">Save</string>
+    <string name="discard">Discard</string>
+    <string name="treatment_for">Treatment For</string>
+</resources>

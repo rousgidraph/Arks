@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.medical.fragments.medicine_details">
+
+
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_med"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+
+        <TextView
+            android:id="@+id/lbl_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/medicine_details"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/second_part"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+            <TextView
+                android:id="@+id/lbl_treatment_for"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/treatment_for"
+                app:layout_constraintStart_toStartOf="@+id/lbl_manu"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_manu" />
+
+            <TextView
+                android:id="@+id/lbl_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="48dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edit_med_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:ems="10"
+                android:hint="@string/medicine_name"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                app:layout_constraintBottom_toBottomOf="@+id/lbl_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/lbl_name" />
+
+            <EditText
+                android:id="@+id/edit_manufacturer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Manufacturer"
+                android:minHeight="48dp"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toBottomOf="@+id/lbl_manu"
+                app:layout_constraintEnd_toEndOf="@+id/edit_med_name"
+                app:layout_constraintStart_toStartOf="@+id/edit_med_name"
+                app:layout_constraintTop_toTopOf="@+id/lbl_manu" />
+
+            <TextView
+                android:id="@+id/lbl_manu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/manufacturer"
+                app:layout_constraintStart_toStartOf="@+id/lbl_name"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_name" />
+
+            <EditText
+                android:id="@+id/edit_treatment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:minHeight="48dp"
+                android:hint="@string/foot_and_mouth"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toBottomOf="@+id/lbl_treatment_for"
+                app:layout_constraintEnd_toEndOf="@+id/edit_manufacturer"
+                app:layout_constraintStart_toStartOf="@+id/edit_manufacturer"
+                app:layout_constraintTop_toTopOf="@+id/lbl_treatment_for" />
+
+            <TextView
+                android:id="@+id/lbl_prescribe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/prescribed_for"
+                app:layout_constraintStart_toStartOf="@+id/lbl_treatment_for"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_treatment_for" />
+
+            <EditText
+                android:id="@+id/commonPrescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:minHeight="48dp"
+                android:hint="@string/_1_shot_per_week"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toBottomOf="@+id/lbl_prescribe"
+                app:layout_constraintEnd_toEndOf="@+id/edit_treatment"
+                app:layout_constraintStart_toStartOf="@+id/edit_treatment"
+                app:layout_constraintTop_toTopOf="@+id/lbl_prescribe" />
+
+            <EditText
+                android:id="@+id/edit_comment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginTop="24dp"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                android:lines="3"
+                android:maxLines="3"
+                app:layout_constraintEnd_toEndOf="@+id/commonPrescription"
+                app:layout_constraintStart_toStartOf="@+id/lbl_comment"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_comment" />
+
+            <TextView
+                android:id="@+id/lbl_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/comment"
+                app:layout_constraintStart_toStartOf="@+id/lbl_prescribe"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_prescribe" />
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/save"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="@+id/edit_comment"
+                app:layout_constraintTop_toTopOf="@+id/btn_discard" />
+
+            <Button
+                android:id="@+id/btn_discard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/discard"
+                android:layout_marginTop="36dp"
+                android:textAllCaps="false"
+                app:layout_constraintStart_toStartOf="@+id/edit_comment"
+                app:layout_constraintTop_toBottomOf="@+id/edit_comment" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

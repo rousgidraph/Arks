@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.animal.fragments.animal_details">
+
+
+    <TextView
+        android:id="@+id/lbl_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Animal Details"
+        android:textSize="35dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edit_ani_age"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@drawable/round_corner_grey"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="calculated field"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/lbl_age"
+        app:layout_constraintEnd_toEndOf="@+id/edit_ani_date"
+        app:layout_constraintStart_toStartOf="@+id/edit_ani_date"
+        app:layout_constraintTop_toTopOf="@+id/lbl_age" />
+
+    <TextView
+        android:id="@+id/lbl_ani_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:text="Animal Type"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_title" />
+
+    <ToggleButton
+        android:id="@+id/toggle_ani_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="Poultry"
+        android:textOn="Cows or Sheep"
+        app:layout_constraintBottom_toBottomOf="@+id/lbl_ani_type"
+        app:layout_constraintEnd_toEndOf="@+id/edit_ani_name"
+        app:layout_constraintStart_toStartOf="@+id/edit_ani_name"
+        app:layout_constraintTop_toTopOf="@+id/lbl_ani_type" />
+
+    <EditText
+        android:id="@+id/edit_ani_name"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="36dp"
+        android:background="@drawable/round_corner_grey"
+        android:ems="10"
+        android:layout_marginStart="36dp"
+        android:gravity="center"
+        android:hint="tag number"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/lbl_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lbl_name"
+        app:layout_constraintTop_toTopOf="@+id/lbl_name" />
+
+    <TextView
+        android:id="@+id/lbl_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name / id"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toStartOf="@+id/lbl_ani_type"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_ani_type" />
+
+    <TextView
+        android:id="@+id/lbl_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Date of birth"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toStartOf="@+id/lbl_name"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_name" />
+
+    <EditText
+        android:id="@+id/edit_ani_date"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@drawable/round_corner_grey"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="5/12/2020"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/lbl_date"
+        app:layout_constraintEnd_toEndOf="@+id/edit_ani_name"
+        app:layout_constraintStart_toStartOf="@+id/edit_ani_name"
+        app:layout_constraintTop_toTopOf="@+id/lbl_date" />
+
+    <TextView
+        android:id="@+id/lbl_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toStartOf="@+id/lbl_date"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_date" />
+
+    <ToggleButton
+        android:id="@+id/toggle_obtained"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="Bought"
+        android:textOn="Born on farm"
+        app:layout_constraintBottom_toBottomOf="@+id/lbl_obtained"
+        app:layout_constraintEnd_toEndOf="@+id/edit_breed"
+        app:layout_constraintStart_toStartOf="@+id/edit_ani_age"
+        app:layout_constraintTop_toTopOf="@+id/lbl_obtained" />
+
+    <TextView
+        android:id="@+id/lbl_obtained"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Obtained from "
+        android:layout_marginTop="60dp"
+        app:layout_constraintStart_toStartOf="@+id/lbl_age"
+        app:layout_constraintTop_toBottomOf="@+id/edit_ani_age" />
+
+    <TextView
+        android:id="@+id/lbl_breed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Breed"
+        app:layout_constraintStart_toStartOf="@+id/lbl_obtained"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_obtained" />
+
+    <EditText
+        android:id="@+id/edit_breed"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@drawable/round_corner_grey"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="The good one"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/lbl_breed"
+        app:layout_constraintEnd_toEndOf="@+id/edit_ani_age"
+        app:layout_constraintStart_toStartOf="@+id/edit_ani_age"
+        app:layout_constraintTop_toTopOf="@+id/lbl_breed" />
+
+    <TextView
+        android:id="@+id/lbl_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comment"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/lbl_breed"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_breed" />
+
+    <EditText
+        android:id="@+id/edit_comment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="12dp"
+        android:gravity="start|top"
+        android:lines="2"
+        android:maxLines="3"
+
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="@+id/edit_breed"
+        app:layout_constraintStart_toStartOf="@+id/lbl_comment"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_comment" />
+
+    <Button
+        android:id="@+id/btn_discard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Discard"
+        android:layout_marginTop="15dp"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="@+id/edit_comment"
+        app:layout_constraintTop_toBottomOf="@+id/edit_comment" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/edit_comment"
+        app:layout_constraintTop_toTopOf="@+id/btn_discard" />
+
+</androidx.constraintlayout.widget.ConstraintLayout></layout>

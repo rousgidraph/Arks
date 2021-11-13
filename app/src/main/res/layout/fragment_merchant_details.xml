@@ -5,7 +5,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.merchant.fragments.Merchant_details">
+    tools:context=".ui.sales_stuff.fragments.Merchant_details">
 
     <TextView
         android:id="@+id/textView"

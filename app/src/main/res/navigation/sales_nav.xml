@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sales_nav"
+    app:startDestination="@id/sales_fragment">
+
+    <fragment
+        android:id="@+id/merchant_details"
+        android:name="com.example.gidraph.ui.sales_stuff.fragments.Merchant_details"
+        android:label="Merchant_details"
+        tools:layout="@layout/fragment_merchant_details">
+        <action
+            android:id="@+id/action_merchant_details_to_sales_fragment"
+            app:destination="@id/sales_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sales_fragment"
+        android:name="com.example.gidraph.ui.sales_stuff.fragments.sales_fragment"
+        android:label="sales_fragment"
+        tools:layout="@layout/fragment_sales_fragment">
+        <action
+            android:id="@+id/action_sales_fragment_to_merchant_details"
+            app:destination="@id/merchant_details" />
+    </fragment>
+</navigation>

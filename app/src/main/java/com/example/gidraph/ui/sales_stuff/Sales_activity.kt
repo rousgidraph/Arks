@@ -1,14 +1,12 @@
-package com.example.gidraph.ui
+package com.example.gidraph.ui.sales_stuff
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.gidraph.R
 
-class MainActivity : AppCompatActivity() {
-
-    // TODO: 12/11/2021 implement the security and on boarding  
+class Sales_activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_sales)
     }
 }

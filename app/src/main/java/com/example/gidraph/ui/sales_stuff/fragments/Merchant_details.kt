@@ -1,4 +1,4 @@
-package com.example.gidraph.ui.merchant.fragments
+package com.example.gidraph.ui.sales_stuff.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

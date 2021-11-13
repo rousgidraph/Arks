@@ -8,14 +8,15 @@ import android.view.ViewGroup
 import com.example.gidraph.R
 
 
-class Vet_details : Fragment() {
+class vet_visit : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_vet_details, container, false)
+        return inflater.inflate(R.layout.fragment_vet_visit, container, false)
     }
+
 
 }

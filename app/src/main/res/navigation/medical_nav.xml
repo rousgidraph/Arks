@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/medical_nav"
+    app:startDestination="@id/vet_visit">
+
+    <fragment
+        android:id="@+id/vet_visit"
+        android:name="com.example.gidraph.ui.medical.fragments.vet_visit"
+        android:label="fragment_vet_visit"
+        tools:layout="@layout/fragment_vet_visit" >
+        <action
+            android:id="@+id/action_vet_visit_to_medicine_details"
+            app:destination="@id/medicine_details" />
+        <action
+            android:id="@+id/action_vet_visit_to_vet_details"
+            app:destination="@id/vet_details" />
+    </fragment>
+    <fragment
+        android:id="@+id/medicine_details"
+        android:name="com.example.gidraph.ui.medical.fragments.medicine_details"
+        android:label="medicine_details"
+        tools:layout="@layout/fragment_medicine_details">
+        <action
+            android:id="@+id/action_medicine_details_to_vet_visit"
+            app:destination="@id/vet_visit" />
+    </fragment>
+    <fragment
+        android:id="@+id/vet_details"
+        android:name="com.example.gidraph.ui.medical.fragments.Vet_details"
+        android:label="Vet_details"
+        tools:layout="@layout/fragment_vet_details">
+        <action
+            android:id="@+id/action_vet_details_to_vet_visit"
+            app:destination="@id/vet_visit" />
+    </fragment>
+</navigation>

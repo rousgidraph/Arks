@@ -1,5 +1,6 @@
 package com.example.gidraph.ui.medical
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.gidraph.databinding.ActivityMedicalBinding
@@ -12,6 +13,7 @@ class medical_activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMedicalBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
     }
 }

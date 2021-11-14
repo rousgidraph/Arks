@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="400dp"
+    android:minWidth="300dp"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/lbl_vet_issue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Issue"
+        android:textSize="20dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edit_brief_diag"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/round_corner_grey"
+        android:ems="10"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        android:hint="The cow was mooing "
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_brief_diag" />
+
+    <EditText
+        android:id="@+id/edit_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="24dp"
+        android:gravity="start|top"
+        android:hint="@string/turns_out_cows_are_supposed_to_moo"
+        android:inputType="textMultiLine"
+        android:lines="3"
+        android:maxLines="4"
+        app:layout_constraintEnd_toEndOf="@+id/edit_brief_diag"
+        app:layout_constraintStart_toStartOf="@+id/edit_brief_diag"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_description" />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="@+id/edit_description"
+        app:layout_constraintTop_toBottomOf="@+id/edit_description" />
+
+    <Button
+        android:id="@+id/btn_discard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Discard"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="@+id/edit_description"
+        app:layout_constraintTop_toTopOf="@+id/btn_add" />
+
+    <TextView
+        android:id="@+id/lbl_brief_diag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Brief Diagnosis"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/edit_brief_diag"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_vet_issue" />
+
+    <TextView
+        android:id="@+id/lbl_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:layout_marginTop="36dp"
+        app:layout_constraintStart_toStartOf="@+id/edit_brief_diag"
+        app:layout_constraintTop_toBottomOf="@+id/edit_brief_diag" />
+</androidx.constraintlayout.widget.ConstraintLayout>

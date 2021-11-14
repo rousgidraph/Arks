@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_height="400dp">
+
+
+    <EditText
+        android:id="@+id/edit_produce_name_pop"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/round_corner_grey"
+        android:ems="10"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:hint="goat Milk"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_prod_type_pop" />
+
+    <TextView
+        android:id="@+id/lbl_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New produce"
+        android:textSize="24dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lbl_prod_type_pop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Produce Name"
+        app:layout_constraintStart_toStartOf="@+id/edit_produce_name_pop"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_title" />
+
+    <EditText
+        android:id="@+id/edit_units_pop"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/round_corner_grey"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Litres"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/edit_produce_name_pop"
+        app:layout_constraintStart_toStartOf="@+id/edit_produce_name_pop"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_unit_name_pop" />
+
+    <TextView
+        android:id="@+id/lbl_unit_name_pop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Unit name"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/edit_produce_name_pop"
+        app:layout_constraintTop_toBottomOf="@+id/edit_produce_name_pop" />
+
+    <Button
+        android:id="@+id/btn_add_prod_pop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Add type"
+        android:padding="5dp"
+        android:textAllCaps="false"
+        android:background="@drawable/round_rectangle"
+        app:layout_constraintEnd_toEndOf="@+id/edit_units_pop"
+        app:layout_constraintStart_toStartOf="@+id/edit_units_pop"
+        app:layout_constraintTop_toBottomOf="@+id/edit_units_pop" />
+</androidx.constraintlayout.widget.ConstraintLayout>

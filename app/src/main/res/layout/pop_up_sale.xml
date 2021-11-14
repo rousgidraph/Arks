@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/lbl_sale_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sale Item"
+        android:textSize="20dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner_sale_type"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/round_corner_grey"
+        android:ems="10"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_sale_type" />
+
+    <EditText
+        android:id="@+id/pop_sale_count"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:background="@drawable/round_corner_grey"
+        android:gravity="center"
+        android:hint="10 pieces"
+        android:inputType="number"
+
+        app:layout_constraintEnd_toEndOf="@+id/spinner_sale_type"
+        app:layout_constraintStart_toStartOf="@+id/spinner_sale_type"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_sale_count" />
+
+    <Button
+        android:id="@+id/btn_add_pop_sale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="@+id/pop_sale_count"
+        app:layout_constraintTop_toBottomOf="@+id/pop_sale_count" />
+
+    <Button
+        android:id="@+id/btn_discard_pop_sale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Discard"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="@+id/pop_sale_count"
+        app:layout_constraintTop_toTopOf="@+id/btn_add_pop_sale" />
+
+    <TextView
+        android:id="@+id/lbl_sale_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Item Sold"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/spinner_sale_type"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_sale_item" />
+
+    <TextView
+        android:id="@+id/lbl_sale_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number of items sold "
+        android:layout_marginTop="36dp"
+        app:layout_constraintStart_toStartOf="@+id/spinner_sale_type"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_sale_type" />
+
+    <Button
+        android:id="@+id/btn_new_sale_pop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_rectangle"
+        android:text="New Sale Item"
+        android:padding="10dp"
+        android:layout_marginTop="24dp"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_add_pop_sale" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

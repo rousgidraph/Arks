@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.sales_stuff.fragments.new_sale_item">
+
+
+        <TextView
+            android:id="@+id/lbl_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sale Details"
+            android:textSize="30dp"
+            android:layout_marginTop="36dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lbl_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="Sale name"
+            android:layout_marginTop="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_title" />
+
+        <TextView
+            android:id="@+id/lbl_sale_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:layout_marginTop="48dp"
+            app:layout_constraintStart_toStartOf="@+id/lbl_item_name"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_item_name" />
+
+        <EditText
+            android:id="@+id/edit_sale_name"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/round_corner_grey"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Beef"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/lbl_item_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/lbl_sale_description"
+            app:layout_constraintTop_toTopOf="@+id/lbl_item_name" />
+
+        <EditText
+            android:id="@+id/edit_description_sale_item"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Some details about the item"
+            android:inputType="textMultiLine"
+            android:lines="2"
+            app:layout_constraintBottom_toBottomOf="@+id/lbl_sale_description"
+            app:layout_constraintEnd_toEndOf="@+id/edit_sale_name"
+            app:layout_constraintStart_toStartOf="@+id/edit_sale_name"
+            app:layout_constraintTop_toTopOf="@+id/lbl_sale_description" />
+
+        <Button
+            android:id="@+id/btn_discard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/discard"
+            android:layout_marginTop="36dp"
+            app:layout_constraintStart_toStartOf="@+id/lbl_sale_description"
+            app:layout_constraintTop_toBottomOf="@+id/edit_description_sale_item" />
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            app:layout_constraintEnd_toEndOf="@+id/edit_description_sale_item"
+            app:layout_constraintTop_toTopOf="@+id/btn_discard" />
+
+        <com.anychart.AnyChartView
+            android:id="@+id/sale_item_graph"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:minWidth="200dp"
+            android:layout_marginTop="36dp"
+            app:layout_constraintEnd_toEndOf="@+id/edit_description_sale_item"
+            app:layout_constraintStart_toStartOf="@+id/lbl_sale_description"
+            app:layout_constraintTop_toBottomOf="@+id/btn_save" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout></layout>

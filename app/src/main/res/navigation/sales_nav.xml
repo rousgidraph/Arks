@@ -22,5 +22,17 @@
         <action
             android:id="@+id/action_sales_fragment_to_merchant_details"
             app:destination="@id/merchant_details" />
+        <action
+            android:id="@+id/action_sales_fragment_to_new_sale_item"
+            app:destination="@id/new_sale_item" />
+    </fragment>
+    <fragment
+        android:id="@+id/new_sale_item"
+        android:name="com.example.gidraph.ui.sales_stuff.fragments.new_sale_item"
+        android:label="fragment_new_sale_item"
+        tools:layout="@layout/fragment_sale_item_details" >
+        <action
+            android:id="@+id/action_new_sale_item_to_sales_fragment"
+            app:destination="@id/sales_fragment" />
     </fragment>
 </navigation>

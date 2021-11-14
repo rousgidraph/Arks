@@ -16,7 +16,7 @@
             android:layout_marginTop="36dp"
             android:fontFamily="@font/roboto_medium"
             android:text="Vet Visit "
-            android:textSize="20dp"
+            android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -80,6 +80,7 @@
             android:id="@+id/recyclerView"
             android:layout_width="0dp"
             android:layout_height="250dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="@+id/spinner_vet"
             app:layout_constraintHorizontal_bias="0.5"

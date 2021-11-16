@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.gidraph.databinding.ActivityMedicalBinding
 import com.example.gidraph.databinding.FragmentMedicineDetailsBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class medical_activity : AppCompatActivity() {
 
     private lateinit var binding :ActivityMedicalBinding

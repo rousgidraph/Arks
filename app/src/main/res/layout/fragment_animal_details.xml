@@ -100,7 +100,7 @@
         android:ems="10"
         android:gravity="center"
         android:hint="5/12/2020"
-        android:inputType="textPersonName"
+        android:inputType="date"
         app:layout_constraintBottom_toBottomOf="@+id/lbl_date"
         app:layout_constraintEnd_toEndOf="@+id/edit_ani_name"
         app:layout_constraintStart_toStartOf="@+id/edit_ani_name"

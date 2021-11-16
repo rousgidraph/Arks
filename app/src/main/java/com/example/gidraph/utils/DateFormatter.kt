@@ -17,6 +17,10 @@
 package com.example.gidraph.utils
 
 import android.annotation.SuppressLint
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import java.text.SimpleDateFormat
 import java.util.Date
 import javax.inject.Inject
@@ -24,12 +28,24 @@ import javax.inject.Inject
 /**
  * String formatter for the log dates.
  */
+@Module
+@InstallIn(ApplicationComponent::class)
 class DateFormatter @Inject constructor() {
 
     @SuppressLint("SimpleDateFormat")
-    private val formatter = SimpleDateFormat("d MMM yyyy HH:mm:ss")
+    private val formatter = SimpleDateFormat("d MMM yyyy")
 
+    @Provides
     fun formatDate(timestamp: Long): String {
         return formatter.format(Date(timestamp))
+    }
+
+
+
+    @Provides
+    fun current_time():Long{
+        val tsLong = System.currentTimeMillis() /// 1000
+
+        return tsLong
     }
 }

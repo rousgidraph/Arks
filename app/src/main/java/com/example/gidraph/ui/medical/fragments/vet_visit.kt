@@ -1,22 +1,23 @@
 package com.example.gidraph.ui.medical.fragments
 
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gidraph.Models.Vet
 import com.example.gidraph.Models.Vet_issue
+import com.example.gidraph.Models.Vet_visit
 import com.example.gidraph.R
 import com.example.gidraph.database.LocalDataSource
 import com.example.gidraph.databinding.FragmentVetVisitBinding
 import com.example.gidraph.databinding.PopUpIssueBinding
+import com.example.gidraph.ui.landing.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -29,6 +30,9 @@ class vet_visit : Fragment() {
     private lateinit var adapter : CustomAdapter
     private lateinit var vet_list : List<Vet>
     private lateinit var vets_drop : Spinner
+    private lateinit var selected_vet : Vet
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,10 +48,20 @@ class vet_visit : Fragment() {
         binding.recyclerView.adapter = adapter
         vets_drop = binding.spinnerVet
         load_vets()
+        binding.btnSave.setOnClickListener { save_major() }
+        vets_drop.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                selected_vet = vet_list[p2]
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+        }
 
 
-
-        //binding.btnCancel.setOnClickListener { Toast.makeText(context, "", Toast.LENGTH_SHORT).show() }
+        binding.btnCancel.setOnClickListener { back_home() }
         return view
     }
 
@@ -57,6 +71,11 @@ class vet_visit : Fragment() {
             loadSpinner(vet_list)
         }
 
+    }
+
+    private fun back_home(){
+        var  int = Intent(activity, MainActivity::class.java)
+        startActivity(int)
     }
 
     fun loadSpinner ( peeps : List<Vet>){
@@ -111,9 +130,37 @@ class vet_visit : Fragment() {
             dialog.show()
         }
     }
+
+    private fun save_all(save_id: Long){
+        for (ss in issues)
+        {
+            ss.visit_id = save_id
+            dataSource.add_vet_visit_issues(ss)
+        }
+        back_home()
+    }
+
+    private fun save_major(){
+        var total = binding.editTotal
+        var date = binding.editDate
+
+
+
+        if( total.text.toString().length < 1){
+            total.error = "Enter the total"
+        }else if (issues.size < 1){
+            Toast.makeText(context, "Enter the issues the vet addressed", Toast.LENGTH_SHORT).show()
+        }else{
+            var visit = Vet_visit(date.text.toString(),selected_vet.id,total.text.toString().toDouble())
+            dataSource.add_vet_visit(visit,{ it
+            var saver = it
+             save_all(saver)
+            })
+        }
+    }
 }
 
-class CustomAdapter(private val dataSet: ArrayList<Vet_issue>) :
+class CustomAdapter(private val dataSet: ArrayList<Vet_issue>) : // this calss helps load the recycler view
     RecyclerView.Adapter<CustomAdapter.ViewHolder>(){
     class ViewHolder(view : View) : RecyclerView.ViewHolder(view) {
         val count : TextView

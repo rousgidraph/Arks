@@ -1,24 +1,24 @@
 package com.example.gidraph.ui.sales_stuff.fragments
 
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.gidraph.Models.Merchant
-import com.example.gidraph.Models.Vet
-import com.example.gidraph.Models.sale_item
-import com.example.gidraph.Models.sale_type
+import com.example.gidraph.Models.*
 import com.example.gidraph.R
 import com.example.gidraph.database.LocalDataSource
 import com.example.gidraph.databinding.FragmentSalesFragmentBinding
 import com.example.gidraph.databinding.PopUpSaleBinding
+import com.example.gidraph.ui.landing.MainActivity
 import com.example.gidraph.utils.DateFormatter
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -33,10 +33,11 @@ class sales_fragment : Fragment() {
     private lateinit var types_list : List<sale_type>
     @Inject lateinit var dater : DateFormatter
     @Inject lateinit var dataSource: LocalDataSource
+    private lateinit var selectedMerch : Merchant
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         var view = inflater.inflate(R.layout.fragment_sales_fragment, container, false)
         binding = FragmentSalesFragmentBinding.bind(view)
@@ -47,16 +48,34 @@ class sales_fragment : Fragment() {
         adapter = CustomAdapter(sales) 
         binding.recyclerSales.adapter = adapter
         merch_drop = binding.spinnerMerchant
+        merch_drop.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                selectedMerch = mercantList[p2]
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+
+        }
         load_merchants()
         load_sale_types()
-        binding.btnAddSale.setOnClickListener { pop_up() }
-
+        binding.btnAddSale.setOnClickListener { pop_up()
+        }
+        binding.btnCancel.setOnClickListener { back_home() }
+        binding.btnSave.setOnClickListener { save_major()
+            }
         
         return view
     }
 
     private fun to_merch(){
         findNavController().navigate(R.id.action_sales_fragment_to_merchant_details)
+    }
+
+    private fun back_home(){
+        var  int = Intent(activity,MainActivity::class.java)
+        startActivity(int)
     }
 
     private fun pop_up(){
@@ -138,6 +157,34 @@ class sales_fragment : Fragment() {
 
     private fun to_sale_item(){
         findNavController().navigate(R.id.action_sales_fragment_to_new_sale_item)
+    }
+
+    private fun save_major(){
+        //selectedMerch =
+        if (binding.editTotal.text.length < 2){
+            binding.editTotal.error = "This cant be blank"
+        }else{
+            var temp_record = Sale(dater.current_time(),selectedMerch.id,binding.editTotal.text.toString().toDouble())
+            var new_id : Long
+            dataSource.add_sale(temp_record) { it ->
+                new_id = it
+                save_all(new_id)
+            }
+            back_home()
+
+        }
+
+    }
+
+    private fun save_all(use_id: Long){
+        // the records are in sales
+        //for each create a temp assing the id given and then save
+        // TODO: 16/11/2021 incase of any issues this is the place
+        for (sale in sales) {
+            sale.sale_id = use_id
+            dataSource.add_sale_items(sale)
+        }
+
     }
 
 }

@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.gidraph.R
 import com.example.gidraph.databinding.FragmentHomeFargmentBinding
+import com.example.gidraph.ui.medical.medical_activity
 import com.example.gidraph.ui.settings.SettingsActivity
 
 
@@ -24,7 +25,7 @@ class home_fragment : Fragment() {
         binding.cardSetting.setOnClickListener {
             to_settings()
         }
-
+        //binding.cardMedicine.setOnClickListener {  }
 
 
         return view
@@ -32,6 +33,12 @@ class home_fragment : Fragment() {
 
     private fun to_settings(){
         var int = Intent(context,SettingsActivity::class.java)
+        startActivity(int)
+    }
+
+    fun to_medicine(){
+        var int = Intent(context,medical_activity::class.java)
+        int.putExtra("adress","med")
         startActivity(int)
     }
 

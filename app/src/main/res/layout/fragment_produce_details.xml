@@ -72,16 +72,16 @@
                 android:layout_marginEnd="24dp"
                 android:ems="10"
                 android:hint="22/11/1999"
-                android:inputType="textPersonName"
+                android:inputType="none"
                 android:minHeight="48dp"
                 app:layout_constraintBottom_toBottomOf="@+id/lbl_date"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/lbl_date" />
 
-            <EditText
-                android:id="@+id/edit_type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <Spinner
+                android:id="@+id/spinner_type"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
                 android:ems="10"
                 android:hint="Eggs"
                 android:inputType="textPersonName"
@@ -110,8 +110,8 @@
                 android:hint="Grade A"
                 android:inputType="textPersonName"
                 app:layout_constraintBottom_toBottomOf="@+id/lbl_quality"
-                app:layout_constraintEnd_toEndOf="@+id/edit_type"
-                app:layout_constraintStart_toStartOf="@+id/edit_type"
+                app:layout_constraintEnd_toEndOf="@+id/spinner_type"
+                app:layout_constraintStart_toStartOf="@+id/spinner_type"
                 app:layout_constraintTop_toTopOf="@+id/lbl_quality" />
 
             <TextView
@@ -185,9 +185,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New"
-                app:layout_constraintEnd_toEndOf="@+id/edit_type"
-                app:layout_constraintStart_toStartOf="@+id/edit_type"
-                app:layout_constraintTop_toBottomOf="@+id/edit_type" />
+                app:layout_constraintEnd_toEndOf="@+id/spinner_type"
+                app:layout_constraintStart_toStartOf="@+id/spinner_type"
+                app:layout_constraintTop_toBottomOf="@+id/spinner_type" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -3,6 +3,9 @@ package com.example.gidraph.database
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.example.gidraph.Models.*
+import com.example.gidraph.Models.views.merchant_score
+import com.example.gidraph.Models.views.sale_score
+import com.example.gidraph.Models.views.vet_score_view
 import com.example.gidraph.daos.*
 
 
@@ -19,7 +22,11 @@ import com.example.gidraph.daos.*
         Vet::class,
         Vet_issue::class,
         Vet_visit::class),//the entitiy classes
-    views = arrayOf(),//the views you want in the database
+    views = arrayOf(
+        merchant_score::class,
+        sale_score::class,
+        vet_score_view::class
+    ),//the views you want in the database
     version = 1,
     exportSchema = false)
 abstract class AppDatabase: RoomDatabase() {
@@ -35,6 +42,9 @@ abstract class AppDatabase: RoomDatabase() {
     abstract fun vet_visit_dao() : vet_visit_dao
     abstract fun merchant_dao() : merchant_dao
     abstract fun sale_type_dao() : sales_type_dao
+    abstract fun sales_item_dao() : sales_item_dao
+    abstract fun vet_issue_dao() : vet_issue_dao
+    abstract fun produce_type_dao() : produce_type_dao
 
 
 

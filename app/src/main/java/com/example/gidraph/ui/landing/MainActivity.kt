@@ -19,7 +19,9 @@ import com.example.gidraph.ui.produce.produceActivity
 import com.example.gidraph.ui.sales_stuff.Sales_activity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
     private lateinit var tabLayout: TabLayout

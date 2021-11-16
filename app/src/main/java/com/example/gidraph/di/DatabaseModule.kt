@@ -2,7 +2,6 @@ package com.example.gidraph.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.gidraph.Models.sale_type
 import com.example.gidraph.daos.*
 import com.example.gidraph.database.AppDatabase
 import dagger.Module
@@ -17,6 +16,7 @@ import javax.inject.Singleton
 @InstallIn(ApplicationComponent::class)
 object DatabaseModule {
 
+    // provides the daos that have acess to the database
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext appContext : Context): AppDatabase{
@@ -65,4 +65,18 @@ object DatabaseModule {
         return database.sale_type_dao()
     }
 
+    @Provides
+    fun provides_sale_item_dao(database: AppDatabase): sales_item_dao{
+        return database.sales_item_dao()
+    }
+
+    @Provides
+    fun providesvet_issue_dao(database: AppDatabase): vet_issue_dao{
+        return database.vet_issue_dao()
+    }
+
+    @Provides
+    fun providesproduce_type_dao(database: AppDatabase):produce_type_dao{
+        return  database.produce_type_dao()
+    }
 }

@@ -149,4 +149,23 @@ class LocalDataSource @Inject constructor(
                }
            }
     }
+
+    fun load_all_produce(callback: (List<Produce>) -> Unit){
+        executorService.execute {
+            var temp = produceDao.get_all()
+            mainThreadHandler.post {
+                callback(temp)
+            }
+        }
+    }
+
+    fun load_all_sale(callback: (List<Produce>) -> Unit){
+        executorService.execute {
+            var temp = produceDao.get_all()
+            mainThreadHandler.post {
+                callback(temp)
+            }
+        }
+    }
+
 }

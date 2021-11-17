@@ -5,18 +5,24 @@
       <map>
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/drawable/round_corner_grey.xml" value="0.2890625" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/drawable/round_rectangle.xml" value="0.2890625" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/activity_graph_details.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/activity_login_stuff.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/activity_main2.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/activity_medical.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/activity_medicine.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/activity_produce_hist.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/activity_sales.xml" value="0.264" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/activity_sales_hist.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/activity_search.xml" value="0.264" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/activity_weather.xml" value="0.4" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/content_main.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/fragment_animal_details.xml" value="0.2" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/fragment_create_account.xml" value="0.25" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/fragment_first.xml" value="0.27291666666666664" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/fragment_home_fargment.xml" value="0.264" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/fragment_home_fargment.xml" value="0.4" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/fragment_medicine_details.xml" value="0.4" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/fragment_medicine_list.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/fragment_merchant_details.xml" value="0.42397914856646396" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/fragment_new_sale_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/fragment_produce_details.xml" value="0.4" />
@@ -24,7 +30,7 @@
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/fragment_sales_fragment.xml" value="0.264" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/fragment_second.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/fragment_settings.xml" value="0.536" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/fragment_status_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/fragment_status_fragment.xml" value="0.4" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/fragment_vet_details.xml" value="0.4" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/fragment_vet_visit.xml" value="0.5092322643343051" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/Arks/app/src/main/res/layout/fragment_welcome.xml" value="0.2" />

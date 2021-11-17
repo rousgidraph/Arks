@@ -30,13 +30,12 @@
             android:id="@+id/lbl_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:text="@string/medicine_details"
             android:textColor="@color/black"
             android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
             app:layout_constraintEnd_toEndOf="@+id/imageView2"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
 
         <androidx.constraintlayout.widget.ConstraintLayout

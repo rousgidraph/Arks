@@ -2,6 +2,7 @@ package com.example.gidraph.ui.landing.status
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Parcelable
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -18,6 +19,7 @@ import com.example.gidraph.Models.views.vet_score_view
 import com.example.gidraph.R
 import com.example.gidraph.database.LocalDataSource
 import com.example.gidraph.databinding.FragmentStatusFragmentBinding
+import com.example.gidraph.ui.graph_details.graph_details
 import com.example.gidraph.ui.weather.Weather
 import com.example.gidraph.utils.Grapher
 import dagger.hilt.android.AndroidEntryPoint
@@ -38,6 +40,9 @@ class status_fragment : Fragment() {
     private lateinit var set_2 : List<vet_score_view>
     private lateinit var set_3 : List<sale_score>
 
+    private lateinit var data_1 : ArrayList<DataEntry>
+    private lateinit var data_2 : ArrayList<DataEntry>
+    private lateinit var data_3 : ArrayList<DataEntry>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,6 +56,11 @@ class status_fragment : Fragment() {
         //navigate to weather
         binding.cardWeather.setOnClickListener { to_weather() }
         load_data()
+
+        binding.btn1.setOnClickListener { to_graph_details("merch","Merchant","sales","Merchant score") }
+        binding.btn2.setOnClickListener { to_graph_details("vet","Vet","Visits","Vet Score") }
+        binding.btn3.setOnClickListener { to_graph_details("sale","Commodity","Cumulative Sales","Commodity Sales") }
+
 
 
         return view
@@ -84,7 +94,7 @@ class status_fragment : Fragment() {
 
     fun draw_Overview(res: List<merchant_score>) {
         Log.i("the ", "draw_Overview: "+res.size)
-        var data_1 : ArrayList<DataEntry> = ArrayList<DataEntry>()
+        data_1  = ArrayList<DataEntry>()
         res.forEach { curr -> run {
             data_1.add(ValueDataEntry(curr.name,curr.total)) // load the data in the thing
         } }
@@ -94,13 +104,16 @@ class status_fragment : Fragment() {
         APIlib.getInstance().setActiveAnyChartView(graph_one)
         var carte  = AnyChart.line()
         carte.data(data_1)
+
         //APIlib.getInstance().setActiveAnyChartView(graph_one)
         graph_one.setChart(carte)
+        //graph_one.setOnClickListener { to_graph_details("merch") }
+
     }
 
     fun draw_graph_two(ress: List<vet_score_view>) {
         Log.i("something", "draw_graph_two: "+ress.size)
-        var data_2 : ArrayList<DataEntry> = ArrayList<DataEntry>()
+        data_2 = ArrayList<DataEntry>()
         ress.forEach { curr -> run {
             data_2.add(ValueDataEntry(curr.name,curr.total)) // load the data in the thing
         } }
@@ -111,11 +124,12 @@ class status_fragment : Fragment() {
         var pie  = AnyChart.pie()
         pie.data(data_2)
         graph_two.setChart(pie)
+       //graph_two.setOnClickListener { to_graph_details("vet") }
     }
 
     fun draw_graph_three(resss: List<sale_score>) {
 
-        var data_3 : ArrayList<DataEntry> = ArrayList<DataEntry>()
+         data_3 = ArrayList<DataEntry>()
         resss.forEach { curr -> run {
             data_3.add(ValueDataEntry(curr.name,curr.total)) // load the data in the thing
         } }
@@ -126,7 +140,7 @@ class status_fragment : Fragment() {
         var pie  = AnyChart.pie()
         pie.data(data_3)
         graph_three.setChart(pie)
-
+       // graph_three.setOnClickListener { to_graph_details("sale") }
     }
 
 
@@ -139,9 +153,21 @@ class status_fragment : Fragment() {
 
     }
 
+    fun to_graph_details(which:String,x:String,y:String,title:String){
+        var int = Intent(activity,graph_details::class.java)
+        int.putExtra("data",which)
+        int.putExtra("x",x)
+        int.putExtra("y",y)
+        int.putExtra("title",title)
+
+        startActivity(int)
+    }
+
     fun to_weather(){
         var int = Intent(activity,Weather::class.java)
         startActivity(int)
     }
 
 }
+
+

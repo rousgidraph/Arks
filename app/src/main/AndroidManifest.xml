@@ -12,6 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Arks">
         <activity
+            android:name=".ui.history.sales_history.sales_hist"
+            android:exported="true" />
+        <activity
+            android:name=".ui.history.produce_history.produce_hist"
+            android:exported="true" />
+        <activity
+            android:name=".ui.medical.Medicine"
+            android:exported="true" />
+        <activity
+            android:name=".ui.graph_details.graph_details"
+            android:exported="true" />
+        <activity
+            android:name=".ui.search.searchActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.weather.Weather"
             android:exported="true" />
         <activity

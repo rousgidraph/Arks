@@ -20,12 +20,7 @@ class medical_activity : AppCompatActivity() {
         binding = ActivityMedicalBinding.inflate(layoutInflater)
         setContentView(binding.root)
         var extras = intent.extras
-        if(extras != null){
-            var value = extras["adress"]
-            if (value =="med"){
-                findNavController(R.navigation.medical_nav).navigate(R.id.action_vet_visit_to_medicine_details)
-            }
-        }
+
 
 
 
